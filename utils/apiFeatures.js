@@ -44,7 +44,7 @@ class QueryFeatures {
 
   pagination() {
     const page = this.queryOptions.page * 1 || 1
-    const limit = this.queryOptions.limit * 1 || 3
+    const limit = this.queryOptions.limit * 1 || 100
     const skip = (page - 1) * limit
     this.query = this.query.skip(skip).limit(limit)
 

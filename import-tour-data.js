@@ -18,17 +18,15 @@ const toursDataPath = path.join(
 
 mongoose.connect(dbURI)
 
-const populateTours = () => {
+const populateTours = async () => {
   const tours = JSON.parse(fs.readFileSync(toursDataPath, 'utf-8'))
-  Tour.create(tours).then((doc) => {
-    console.log(doc)
-  })
+  await Tour.create(tours)
+  console.log('done')
 }
 
-const deleteTours = () => {
-  Tour.deleteMany().then((val) => {
-    console.log(val)
-  })
+const deleteTours = async () => {
+  await Tour.deleteMany()
+  console.log('done')
 }
 
 if (process.argv[2] === '--import') populateTours()
