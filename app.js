@@ -1,12 +1,12 @@
-const express = require("express");
-require("dotenv").config();
+require('dotenv').config()
+const express = require('express')
 
-const toursRouter = require("./routes/toursRoute");
+const toursRouter = require('./routes/toursRoute')
 
-const app = express();
+const app = express()
 
-app.use(express.json());
+app.use(express.json())
 
-app.use("/api/v1/tours", toursRouter);
+app.use('/api/v1/tours', toursRouter)
 
-module.exports = app;
+module.exports = app
